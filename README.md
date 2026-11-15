@@ -163,6 +163,25 @@ Para encerrar os containers e remover também os volumes do banco de dados:
 
 ❗ Atenção: o segundo comando remove os dados persistidos no volume do MySQL.
 
+## 💻 Endpoints da API
+
+A API disponibiliza rotas para o gerenciamento de produtos e a consulta de notificações.
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| GET | `/api/afiliados/{usuario_id}/produtos` | Lista os produtos de um afiliado. |
+| POST | `/api/afiliados/{usuario_id}/produtos` | Cadastra um novo produto. |
+| GET | `/api/afiliados/{usuario_id}/produtos/{produto_id}` | Consulta os detalhes de um produto. |
+| PUT | `/api/afiliados/{usuario_id}/produtos/{produto_id}` | Atualiza os dados de um produto. |
+| DELETE | `/api/afiliados/{usuario_id}/produtos/{produto_id}` | Exclui um produto. |
+| GET | `/api/usuarios/{usuario_id}/notificacoes/nao-lidas` | Consulta as notificações não lidas de um usuário. |
+
+As rotas de consulta de produtos também aceitam os parâmetros `data_inicio` e `data_fim`, permitindo filtrar os resultados por período.
+
+A documentação interativa dos endpoints pode ser acessada pelo Swagger, em:
+
+```http://localhost:8000/docs```
+
 ## 👥 Equipe e Contribuições
 
 Este projeto foi desenvolvido em colaboração por toda a equipe. Todos os membros da equipe estão cadastrados como contribuidores neste repositório do GitHub e constam como Colaboradores.
