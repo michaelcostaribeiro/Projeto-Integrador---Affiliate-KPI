@@ -1,0 +1,90 @@
+// Affiliate KPI — DER no formato DBML
+// Cole este conteúdo em https://dbdiagram.io/d para ver e editar o diagrama
+// (o dbdiagram também exporta para MySQL, PNG e PDF)
+
+Project affiliate_kpi {
+  database_type: 'MySQL'
+  Note: 'Mini CRM para afiliados do TikTok Shop — Projeto Integrador Senac'
+}
+
+Table usuario {
+  id int [pk, increment]
+  nome varchar(100) [not null]
+  email varchar(150) [not null, unique]
+  senha_hash varchar(255) [not null]
+  tipo usuario_tipo [not null]
+  criado_em datetime [not null, default: `CURRENT_TIMESTAMP`]
+}
+
+Enum usuario_tipo {
+  AFILIADO
+  LOJA
+}
+
+Table loja {
+  id int [pk, increment]
+  usuario_id int [null, note: 'NULL quando a loja não usa o sistema']
+  nome varchar(120) [not null, unique]
+}
+
+Table categoria {
+  id int [pk, increment]
+  nome varchar(80) [not null, unique]
+}
+
+Table produto {
+  id int [pk, increment]
+  loja_id int [not null]
+  categoria_id int [not null]
+  nome varchar(150) [not null]
+  fabricante varchar(100)
+  imagem_url varchar(500)
+  preco decimal(10,2) [not null]
+  criado_em datetime [not null, default: `CURRENT_TIMESTAMP`]
+}
+
+Table afiliacao {
+  id int [pk, increment]
+  usuario_id int [not null]
+  produto_id int [not null]
+  link_afiliado varchar(500) [not null]
+  comissao_percentual decimal(5,2) [not null]
+  ativo boolean [not null, default: true]
+  criado_em datetime [not null, default: `CURRENT_TIMESTAMP`]
+
+  indexes {
+    (usuario_id, produto_id) [unique]
+  }
+  Note: 'Liga um afiliado a um produto que ele divulga (N:N entre usuario e produto)'
+}
+
+Table metrica_diaria {
+  id bigint [pk, increment]
+  afiliacao_id int [not null]
+  data date [not null]
+  visualizacoes int [not null, default: 0]
+  cliques int [not null, default: 0]
+  vendas int [not null, default: 0]
+  comissao_gerada decimal(10,2) [not null, default: 0]
+
+  indexes {
+    (afiliacao_id, data) [unique]
+  }
+  Note: 'Taxa de conversão, tendências e rankings são calculados na consulta, não armazenados'
+}
+
+Table notificacao {
+  id int [pk, increment]
+  usuario_id int [not null]
+  mensagem varchar(255) [not null]
+  criado_em datetime [not null, default: `CURRENT_TIMESTAMP`]
+  visto_em datetime [null, note: 'NULL = não lida']
+}
+
+Ref: loja.usuario_id > usuario.id [delete: set null]
+Ref: produto.loja_id > loja.id
+Ref: produto.categoria_id > categoria.id
+Ref: afiliacao.usuario_id > usuario.id [delete: cascade]
+Ref: afiliacao.produto_id > produto.id [delete: cascade]
+Ref: metrica_diaria.afiliacao_id > afiliacao.id [delete: cascade]
+Ref: notificacao.usuario_id > usuario.id [delete: cascade]

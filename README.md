@@ -59,6 +59,18 @@ Atualmente, o projeto contempla as seguintes funcionalidades:
 
 ✔️ Nginx: disponibilização da aplicação frontend.
 
+## 🗄️ Modelagem e Banco de Dados
+
+O projeto utiliza MySQL 8.4 como sistema de gerenciamento de banco de dados. A modelagem foi desenvolvida por meio de um Diagrama Entidade-Relacionamento (DER), representando as entidades, seus atributos e os relacionamentos necessários para o funcionamento da aplicação.
+
+Os arquivos relacionados à modelagem e à estrutura do banco de dados estão disponíveis no repositório:
+
+- **DER (PDF):** diagrama visual para consulta da estrutura e dos relacionamentos entre as entidades.
+- **DER (DBML):** arquivo editável contendo a definição da modelagem.
+- **Script SQL:** arquivo contendo os comandos de criação das tabelas, relacionamentos e inserção de dados fictícios para demonstração.
+
+Os arquivos estão organizados nas pastas `docs/database/` e `database/`.
+
 ## 💻 Estrutura do Projeto
 ```bash
 Projeto-Integrador---Affiliate-KPI/
@@ -85,6 +97,14 @@ Projeto-Integrador---Affiliate-KPI/
 │       ├── index.css
 │       ├── api.js
 │       └── main.jsx
+│
+├── docs/
+│   └── database/
+│       ├── DER.dbml
+│       └── DER.pdf
+│
+├── database/
+│   └── database.sql
 │
 ├── .env.example
 ├── Dockerfile
@@ -191,7 +211,7 @@ Este projeto foi desenvolvido em colaboração por toda a equipe. Todos os membr
 | MICHAEL COSTA RIBEIRO | @michaelcostaribeiro  |
 | BRUNO FRESCHI CONTE | @brunofreschii  | 
 | BIANCA LIMA HABKOUK | @devbibs  |
-| RICARDO RIGONI VIEIRA LIGO | @  |
+| RICARDO RIGONI VIEIRA LIGO | @ricardoligosenac  |
 | GUSTAVO SILVA | @gusilvo  |
 
 
