@@ -189,7 +189,7 @@ Este projeto foi desenvolvido em colaboração por toda a equipe. Todos os membr
 | Membro | Github |
 |---------|----------|
 | MICHAEL COSTA RIBEIRO | @michaelcostaribeiro  |
-| BRUNO FRESCHI CONTE | @  | 
+| BRUNO FRESCHI CONTE | @brunofreschii  | 
 | BIANCA LIMA HABKOUK | @devbibs  |
 | RICARDO RIGONI VIEIRA LIGO | @  |
 | GUSTAVO SILVA | @gusilvo  |
