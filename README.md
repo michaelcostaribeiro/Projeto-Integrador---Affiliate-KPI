@@ -17,10 +17,6 @@ Atualmente, o projeto contempla as seguintes funcionalidades:
 
 ✔️ Detalhes do produto: acesso a informações individuais e métricas de desempenho.
 
-✔️ Filtros por período: consulta de dados de acordo com datas selecionadas.
-
-✔️ Notificações: estrutura de consulta de notificações não lidas.
-
 ❗ Observação: os dados de desempenho apresentados são gerados de forma simulada para fins de demonstração. O projeto não possui integração direta com a API oficial do TikTok Shop.
 
 ## 🛠️ Tecnologias utilizadas
