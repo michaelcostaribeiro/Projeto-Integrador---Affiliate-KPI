@@ -6,7 +6,7 @@ O **Affiliate KPI** é uma aplicação web desenvolvida como parte do Projeto In
 
 O sistema conta com um painel de acompanhamento, gerenciamento de produtos e visualização de indicadores de desempenho, reunindo informações relevantes em uma única interface.
 
-Este repositório contém a documentação completa e o Mínimo Produto Viável (MVP) referentes à primeira e segunda entregas do Projeto.
+Este repositório contém a documentação completa e o Mínimo Produto Viável (MVP) referentes à primeira e segunda entregas do Projeto, além de um pequeno vídeo demonstrativo para ilustrar as funcionalidades do produto.
 
 ## 🛠️ Funcionalidades 
 Atualmente, o projeto contempla as seguintes funcionalidades:
